@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hooooooo!</title>
+  <style>
+    body {
+  background-image: url(https://i.makeagif.com/media/12-09-2020/3FmrKC.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-position: center;
+}
+
+    /* Animation for all characters */
+    @keyframes runAnimation {
+      0% {
+        left: -180px;
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+        left: -30px;
+      }
+      85% {
+        opacity: 1;
+        left: calc(100vw - 170px);
+      }
+      100% {
+        left: 100vw;
+        opacity: 0;
+      }
+    }
+
+    /* Character container styling */
+    .character {
+      position: absolute;
+      height: 150px;
+      z-index: 1;
+    }
+
+    /* Individual character positions and animations */
+    .naruto {
+      bottom: 65px;
+      animation: runAnimation 8s linear infinite;
+      animation-delay: 0s;
+    }
+
+    .sasuke {
+      bottom: 65px;
+      animation: runAnimation 8s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .sakura {
+      bottom: 65px;
+      animation: runAnimation 8s linear infinite;
+      animation-delay: 4s;
+    }
+
+    .kakashi {
+      bottom: 65px;
+      animation: runAnimation 8s linear infinite;
+      animation-delay: 6s;
+    }
+  </style>
+</head>
+<body>
+  <!-- Team 7 characters -->
+  <div class="character naruto">
+    <img src="https://celiabullwinkel.com/wp-content/uploads/2024/09/SB_Squidward_WalkCycleSad.gif" height="150px">
+  </div>
+  
+  <div class="character sasuke">
+    <img src="https://media4.giphy.com/media/LvrOKAqHcngtdPl1QZ/giphy.gif?cid=6c09b95296ka1ceydrcm7l8bmw2km263txivhk65edesx37e&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" height="150px">
+  </div>
+  
+  <div class="character sakura">
+    <img src="https://i.pinimg.com/originals/71/1e/ab/711eabdcb2a98390783f75007ff6895d.gif" height="150px">
+  </div>
+  
+  <div class="character kakashi">
+    <img src="https://cdna.artstation.com/p/assets/images/images/036/996/864/original/shanly-alvionico-febrilian-webp-net-gifmaker-21.gif?1619186555" height="150px">
+  </div>
+  <audio autoplay loop>
+  <source src="sounding.mp3">
+</audio>
+    <script>
+    // Ensure audio plays automatically without user interaction
+document.addEventListener('DOMContentLoaded', function() {
+  const audio = document.querySelector('audio');
+  
+  // Try to play audio when the page loads
+  const playPromise = audio.play();
+  
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      // Auto-play was prevented
+      // Create a button that will allow users to start the audio
+      const button = document.createElement('button');
+      button.innerHTML = 'Play Audio';
+      button.style.position = 'fixed';
+      button.style.top = '10px';
+      button.style.left = '10px';
+      button.style.zIndex = '1000';
+      button.addEventListener('click', () => {
+        audio.play();
+        button.remove();
+      });
+      document.body.appendChild(button);
+    });
+  }
+});
+  </script>
+</body>
+</html>
